@@ -9,6 +9,7 @@ namespace Assembly_CSharp_Editor.Assets._Project.Scripts.Game.Rockets
         public float EngineForce = 1500f;
         public float ThrusterForce = 500f;
         public ThrusterReferences Thrusters;
+        public GameObject RocketExplosionPrefab;
         public FuelState Fuel = new FuelState();
 
         public float BoosterFuelConsumptionPerSecond = 0.1f;
@@ -31,6 +32,13 @@ namespace Assembly_CSharp_Editor.Assets._Project.Scripts.Game.Rockets
             _rigidbody = GetComponent<Rigidbody>();
             _landingController = new LandingController();
             Fuel.Reset();
+
+            _landingController.OnCrash += () => 
+            {
+                var explosion = Instantiate(RocketExplosionPrefab);
+                explosion.transform.position = transform.position;
+                explosion.transform.rotation = transform.rotation;
+            };
         }
 
         void Update()
