@@ -11,7 +11,8 @@ namespace Assembly_CSharp_Editor.Assets._Project.Scripts.Game
         public GameObject RocketPrefab;
         public CameraController Camera;
         public RocketUI UI;
-        public float StartingHeight = 500;
+        public float StartingHeight = 500f;
+        public float StartingSpeedInKmh = 100f;
 
         private RocketController _rocket;
         private PlayState _state;
@@ -54,6 +55,7 @@ namespace Assembly_CSharp_Editor.Assets._Project.Scripts.Game
             );
             _rocket.transform.position = Vector3.up * StartingHeight;
             _rocket.transform.rotation = startingRotation;
+            _rocket.GetComponent<Rigidbody>().velocity = Vector3.down * (StartingSpeedInKmh / 3.6f);
             Camera.Target = _rocket.transform;
             UI.Rocket = _rocket;
             _state = PlayState.Playing;

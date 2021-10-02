@@ -499,7 +499,8 @@ MonoBehaviour:
   RocketPrefab: {fileID: 2442093472397720338, guid: 47b7517d9b0e4f94fab85701ed7b9ea0, type: 3}
   Camera: {fileID: 1687258583}
   UI: {fileID: 1126055122}
-  StartingHeight: 500
+  StartingHeight: 1000
+  StartingSpeedInKmh: 100
 --- !u!1 &545583100
 GameObject:
   m_ObjectHideFlags: 0
@@ -2713,6 +2714,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1835781752, guid: 47b7517d9b0e4f94fab85701ed7b9ea0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1835781752, guid: 47b7517d9b0e4f94fab85701ed7b9ea0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.06
+      objectReference: {fileID: 0}
     - target: {fileID: 2442093472397720338, guid: 47b7517d9b0e4f94fab85701ed7b9ea0, type: 3}
       propertyPath: m_Name
       value: Rocket
@@ -2727,7 +2736,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3075923084367143336, guid: 47b7517d9b0e4f94fab85701ed7b9ea0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3075923084367143336, guid: 47b7517d9b0e4f94fab85701ed7b9ea0, type: 3}
       propertyPath: m_LocalPosition.z
