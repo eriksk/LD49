@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   sodipodi:docname="rocket_texture.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:snap-global="false"
+     inkscape:zoom="0.38885732"
+     inkscape:cx="1361.682"
+     inkscape:cy="502.75509"
+     inkscape:window-width="2560"
+     inkscape:window-height="1387"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#ff00ff;fill-rule:evenodd;stroke-width:0.526423"
+       id="rect31"
+       width="270.93332"
+       height="270.93332"
+       x="-31.97938"
+       y="10.206185"
+       inkscape:export-filename="C:\Users\eriks\source\repos\games\LD49\Assets\_Project\Content\Rocket\Materials\rocket_texture.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <rect
+       style="fill:#000000;stroke:none;stroke-width:0.0992611"
+       id="rect153"
+       width="32.235317"
+       height="46.428482"
+       x="-28.370949"
+       y="14.536304" />
+    <rect
+       style="fill:#ffffff;stroke:none;stroke-width:0.0992611;fill-opacity:1"
+       id="rect1094"
+       width="32.235317"
+       height="46.428482"
+       x="1.939876"
+       y="14.055181" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.353461"
+       id="rect1500"
+       width="184.75169"
+       height="102.72002"
+       x="42.354309"
+       y="13.814618" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:26.9011px;line-height:1.25;font-family:sans-serif;fill:#d70000;fill-opacity:1;stroke:none;stroke-width:0.672528"
+       x="73.804756"
+       y="73.529869"
+       id="text2362"><tspan
+         sodipodi:role="line"
+         id="tspan2360"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#d70000;fill-opacity:1;stroke-width:0.672528"
+         x="73.804756"
+         y="73.529869">YSPACE</tspan></text>
+    <rect
+       style="fill:#ff00ff;fill-rule:evenodd;stroke-width:0.526423"
+       id="rect6512"
+       width="270.93332"
+       height="270.93332"
+       x="264.39313"
+       y="5.3949432"
+       inkscape:export-filename="C:\Users\eriks\source\repos\games\LD49\Assets\_Project\Content\LandingPad\Materials\landing_pad_texture.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <rect
+       style="fill:#000000;stroke:none;stroke-width:0.0992611"
+       id="rect6514"
+       width="32.235317"
+       height="46.428482"
+       x="268.00156"
+       y="9.7250624"
+       inkscape:export-filename="C:\Users\eriks\source\repos\games\LD49\Assets\_Project\Content\LandingPad\Materials\landing_pad_texture.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.0992611"
+       id="rect6516"
+       width="32.235317"
+       height="46.428482"
+       x="298.31238"
+       y="9.2439384"
+       inkscape:export-filename="C:\Users\eriks\source\repos\games\LD49\Assets\_Project\Content\LandingPad\Materials\landing_pad_texture.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.353461"
+       id="rect6518"
+       width="184.75169"
+       height="102.72002"
+       x="338.72681"
+       y="9.003376"
+       inkscape:export-filename="C:\Users\eriks\source\repos\games\LD49\Assets\_Project\Content\LandingPad\Materials\landing_pad_texture.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:26.9011px;line-height:1.25;font-family:sans-serif;fill:#d70000;fill-opacity:1;stroke:none;stroke-width:0.672528"
+       x="370.17728"
+       y="68.718628"
+       id="text6522"
+       inkscape:export-filename="C:\Users\eriks\source\repos\games\LD49\Assets\_Project\Content\LandingPad\Materials\landing_pad_texture.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><tspan
+         sodipodi:role="line"
+         id="tspan6520"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#d70000;fill-opacity:1;stroke-width:0.672528"
+         x="370.17728"
+         y="68.718628">YSPACE</tspan></text>
+    <circle
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       id="path6546"
+       cx="384.89935"
+       cy="183.30833"
+       r="90.451347"
+       inkscape:export-filename="C:\Users\eriks\source\repos\games\LD49\Assets\_Project\Content\LandingPad\Materials\landing_pad_texture.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <rect
+       style="fill:#686868;stroke:none;stroke-width:0.0992611;fill-opacity:1"
+       id="rect8853"
+       width="32.235317"
+       height="46.428482"
+       x="268.00156"
+       y="53.988487"
+       inkscape:export-filename="C:\Users\eriks\source\repos\games\LD49\Assets\_Project\Content\LandingPad\Materials\landing_pad_texture.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <circle
+       style="fill:#b03e3e;fill-opacity:1;stroke:none;stroke-width:0.225177"
+       id="circle9377"
+       cx="384.89935"
+       cy="183.30833"
+       r="76.979866"
+       inkscape:export-filename="C:\Users\eriks\source\repos\games\LD49\Assets\_Project\Content\LandingPad\Materials\landing_pad_texture.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <circle
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.185771"
+       id="circle10351"
+       cx="384.89935"
+       cy="183.30833"
+       r="63.508389"
+       inkscape:export-filename="C:\Users\eriks\source\repos\games\LD49\Assets\_Project\Content\LandingPad\Materials\landing_pad_texture.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <circle
+       style="fill:#b03e3e;fill-opacity:1;stroke:none;stroke-width:0.0520722"
+       id="circle10623"
+       cx="384.89935"
+       cy="183.30833"
+       r="17.80159"
+       inkscape:export-filename="C:\Users\eriks\source\repos\games\LD49\Assets\_Project\Content\LandingPad\Materials\landing_pad_texture.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+  </g>
+</svg>

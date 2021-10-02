@@ -14,9 +14,17 @@ namespace Assembly_CSharp_Editor.Assets._Project.Scripts.Game
         public float StartingHeight = 500;
 
         private RocketController _rocket;
+        private PlayState _state;
 
         void Start()
         {
+            ClearState();
+            StartCoroutine(StartSlowly());
+        }
+
+        private void ClearState()
+        {
+            _state = PlayState.PreGame;
             var existingRocket = GameObject.FindObjectOfType<RocketController>();
             if (existingRocket != null)
             {
@@ -24,17 +32,37 @@ namespace Assembly_CSharp_Editor.Assets._Project.Scripts.Game
             }
             Camera.Target = null;
             UI.Rocket = null;
+        }
 
-            StartCoroutine(StartSlowly());
+        void Update()
+        {
+            if (_state == PlayState.Playing && Input.GetKey(KeyCode.Return))
+            {
+                ClearState();
+                StartCoroutine(StartSlowly());
+            }
         }
 
         private IEnumerator StartSlowly()
         {
             yield return new WaitForSeconds(3);
             _rocket = Instantiate(RocketPrefab).GetComponent<RocketController>();
+            var startingRotation = Quaternion.Euler(
+                UnityEngine.Random.Range(-15, 15),
+                0f,
+                180f + UnityEngine.Random.Range(-15, 15)
+            );
             _rocket.transform.position = Vector3.up * StartingHeight;
+            _rocket.transform.rotation = startingRotation;
             Camera.Target = _rocket.transform;
             UI.Rocket = _rocket;
+            _state = PlayState.Playing;
         }
+    }
+
+    public enum PlayState
+    {
+        PreGame,
+        Playing
     }
 }
