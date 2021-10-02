@@ -15,6 +15,7 @@ namespace Assembly_CSharp_Editor.Assets._Project.Scripts.Game.Rockets
         public bool IsLanding => _isLanding;
         public bool Landed => _timeStandingStill > 3f && !_crashed;
         public bool Done { get; private set; }
+        public float LandingPrecision { get; set; }
 
         public event Action OnLandedSuccessfully;
         public event Action OnCrash;
@@ -24,7 +25,7 @@ namespace Assembly_CSharp_Editor.Assets._Project.Scripts.Game.Rockets
             _contacts = new List<float>(32);
             Done = false;
 
-            OnLandedSuccessfully += () => Debug.Log("LANDING SUCCESSFUL!");
+            OnLandedSuccessfully += () => Debug.Log($"LANDING SUCCESSFUL! Precision: {LandingPrecision}");
             OnCrash += () => Debug.Log("CRASH SUCCESSFUL!");
         }
 
@@ -34,6 +35,7 @@ namespace Assembly_CSharp_Editor.Assets._Project.Scripts.Game.Rockets
 
             if (Landed)
             {
+                LandingPrecision = Vector3.Distance(rocket.transform.position, Vector3.zero);
                 Done = true;
                 OnLandedSuccessfully?.Invoke();
             }
@@ -59,6 +61,8 @@ namespace Assembly_CSharp_Editor.Assets._Project.Scripts.Game.Rockets
         public void RegisterInSafeZone(RocketController rocket)
         {
             if (Done) return;
+
+            if(rocket.Rigidbody == null) return;
 
             var speed = rocket.Rigidbody.velocity.magnitude;
             var angularSpeed = rocket.Rigidbody.angularVelocity.magnitude;

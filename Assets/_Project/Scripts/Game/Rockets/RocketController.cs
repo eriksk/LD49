@@ -9,7 +9,7 @@ namespace Assembly_CSharp_Editor.Assets._Project.Scripts.Game.Rockets
         public float EngineForce = 1500f;
         public float ThrusterForce = 500f;
         public ThrusterReferences Thrusters;
-        public FuelState Fuel;
+        public FuelState Fuel = new FuelState();
 
         public float BoosterFuelConsumptionPerSecond = 0.1f;
         public float MainEngineFuelConsumptionPerSecond = 0.1f;
@@ -19,7 +19,7 @@ namespace Assembly_CSharp_Editor.Assets._Project.Scripts.Game.Rockets
         private ThrusterState _thrusterState;
         private float _engineState;
 
-        private LandingController _landingController;
+        private LandingController _landingController = new LandingController();
 
         public float Altitude => transform.position.y;
         public float VerticalSpeed => _rigidbody.velocity.y;
@@ -45,6 +45,11 @@ namespace Assembly_CSharp_Editor.Assets._Project.Scripts.Game.Rockets
                     Front = Input.GetKey(KeyCode.W) && Fuel.Front > 0f ? 1f : 0f,
                     Back = Input.GetKey(KeyCode.S) && Fuel.Back > 0f ? 1f : 0f,
                 };
+            }
+            else
+            {
+                _engineState = 0f;
+                _thrusterState = new ThrusterState();
             }
 
             Fuel.Main -= MainEngineFuelConsumptionPerSecond * _engineState * Time.deltaTime;

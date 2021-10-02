@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2138677392}
-  m_IndirectSpecularColor: {r: 0.2850269, g: 0.3713935, b: 0.49601045, a: 1}
+  m_IndirectSpecularColor: {r: 0.28502658, g: 0.37139347, b: 0.4960115, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -453,6 +453,53 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 6229028799888249704, guid: 6263b6cbcf3471a4db364c0e7471f4c3, type: 3}
+--- !u!1 &490450864
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 490450865}
+  - component: {fileID: 490450866}
+  m_Layer: 0
+  m_Name: '[GameState]'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &490450865
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 490450864}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 22.956074, y: -18.558668, z: 34.93898}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &490450866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 490450864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f8a604819da9f148a3bc7bc83b93ef8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RocketPrefab: {fileID: 2442093472397720338, guid: 47b7517d9b0e4f94fab85701ed7b9ea0, type: 3}
+  Camera: {fileID: 1687258583}
+  UI: {fileID: 1126055122}
+  StartingHeight: 500
 --- !u!1 &545583100
 GameObject:
   m_ObjectHideFlags: 0
@@ -562,7 +609,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &653260035
 GameObject:
@@ -610,7 +657,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &669590697
 GameObject:
@@ -1026,7 +1073,7 @@ RectTransform:
   - {fileID: 76714124}
   - {fileID: 883103799}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2482,7 +2529,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 1.5447879e+25, y: 0, z: 0, w: 1e-45}
+  m_BoundingSphereOverride: {x: 0, y: 8.197687e+30, z: 2.28e-43, w: 8.1924696e+30}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -2494,13 +2541,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2138677391}
-  m_LocalRotation: {x: 0.7064338, y: 0.47771442, z: 0.030843567, w: 0.5213338}
+  m_LocalRotation: {x: 0.47246677, y: -0.037920088, z: 0.5260939, w: 0.70608956}
   m_LocalPosition: {x: 0.24, y: 3, z: 4.18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 45, y: 130, z: 90}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 45, y: 38.852, z: 90}
 --- !u!4 &543450652019626999
 Transform:
   m_ObjectHideFlags: 0
@@ -2598,10 +2645,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1892833963973247053, guid: 47b7517d9b0e4f94fab85701ed7b9ea0, type: 3}
-      propertyPath: moveWithTransform
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2442093472397720338, guid: 47b7517d9b0e4f94fab85701ed7b9ea0, type: 3}
       propertyPath: m_Name
       value: Rocket
@@ -2616,7 +2659,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3075923084367143336, guid: 47b7517d9b0e4f94fab85701ed7b9ea0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3075923084367143336, guid: 47b7517d9b0e4f94fab85701ed7b9ea0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2628,15 +2671,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3075923084367143336, guid: 47b7517d9b0e4f94fab85701ed7b9ea0, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.00000003774895
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3075923084367143336, guid: 47b7517d9b0e4f94fab85701ed7b9ea0, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -1.110223e-16
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3075923084367143336, guid: 47b7517d9b0e4f94fab85701ed7b9ea0, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 1.11022296e-16
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3075923084367143336, guid: 47b7517d9b0e4f94fab85701ed7b9ea0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

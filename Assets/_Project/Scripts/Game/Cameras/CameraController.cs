@@ -20,16 +20,18 @@ namespace Assembly_CSharp_Editor.Assets._Project.Scripts.Game.Cameras
 
         void Update()
         {
+            var targetsPosition = Target == null ? new Vector3(0f, 5f, 0f) : Target.position;
+
             _yaw += Input.GetAxis("Mouse X");
             _pitch += Input.GetAxis("Mouse Y");
 
-            _pitch = Mathf.Clamp(_pitch, -80f, 89f);
+            _pitch = Mathf.Clamp(_pitch, -80f, 90f);
 
             var rotation = Quaternion.Euler(_pitch, _yaw, 0f);
 
             transform.rotation = rotation;
             transform.position =
-                Target.position +
+                targetsPosition +
                 (Vector3.up * Height) +
                 (rotation * Vector3.back) * Distance;
         }

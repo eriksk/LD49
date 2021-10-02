@@ -11,7 +11,7 @@ namespace Assembly_CSharp_Editor.Assets._Project.Scripts.Game.UI
         public RocketController Rocket;
         public Text AltitudeValueText;
         public Text VerticalSpeedValueText;
-        
+
         public Text FuelLeftValueText;
         public Text FuelRightValueText;
         public Text FuelFrontValueText;
@@ -20,12 +20,24 @@ namespace Assembly_CSharp_Editor.Assets._Project.Scripts.Game.UI
 
         void Update()
         {
+            if (Rocket == null)
+            {
+                const string na = "N/A";
+                AltitudeValueText.text = na;
+                VerticalSpeedValueText.text = na;
+                FuelLeftValueText.text = na;
+                FuelRightValueText.text = na;
+                FuelFrontValueText.text = na;
+                FuelBackValueText.text = na;
+                FuelMainValueText.text = na;
+                return;
+            }
+
             var altitude = (int)Rocket.Altitude;
             var verticalSpeed = (int)MpsToKmph(Rocket.VerticalSpeed);
-            
+
             AltitudeValueText.text = $"{altitude} m";
             VerticalSpeedValueText.text = $"{verticalSpeed} km/h";
-
             FuelLeftValueText.text = FormatPercent(Rocket.Fuel.Left);
             FuelRightValueText.text = FormatPercent(Rocket.Fuel.Right);
             FuelFrontValueText.text = FormatPercent(Rocket.Fuel.Front);
