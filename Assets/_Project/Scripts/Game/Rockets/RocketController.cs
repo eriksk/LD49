@@ -8,12 +8,11 @@ namespace Assembly_CSharp_Editor.Assets._Project.Scripts.Game.Rockets
     {
         public float EngineForce = 1500f;
         public float ThrusterForce = 500f;
-        public ThrusterReferences LowerThrusters;
-        public ThrusterReferences UpperThrusters;
+        public ThrusterReferences Thrusters;
 
         private Rigidbody _rigidbody;
 
-        private ThrusterState _lowerThrusterState, _upperThrusterState;
+        private ThrusterState _thrusterState;
         private float _engineState;
         
         void Start()
@@ -24,14 +23,7 @@ namespace Assembly_CSharp_Editor.Assets._Project.Scripts.Game.Rockets
         void Update()
         {
             _engineState = Input.GetMouseButton(0) ? 1f : 0f;
-            _lowerThrusterState = new ThrusterState()
-            {
-                Left = Input.GetKey(KeyCode.F) ? 1f : 0f,
-                Right = Input.GetKey(KeyCode.H) ? 1f : 0f,
-                Front = Input.GetKey(KeyCode.T) ? 1f : 0f,
-                Back = Input.GetKey(KeyCode.G) ? 1f : 0f,
-            };
-            _upperThrusterState = new ThrusterState()
+            _thrusterState = new ThrusterState()
             {
                 Left = Input.GetKey(KeyCode.A) ? 1f : 0f,
                 Right = Input.GetKey(KeyCode.D) ? 1f : 0f,
@@ -44,15 +36,10 @@ namespace Assembly_CSharp_Editor.Assets._Project.Scripts.Game.Rockets
         {
             _rigidbody.AddForce(transform.up * _engineState * EngineForce);
 
-            _rigidbody.AddForceAtPosition(LowerThrusters.Left.up * _lowerThrusterState.Left * ThrusterForce, LowerThrusters.Left.position);
-            _rigidbody.AddForceAtPosition(LowerThrusters.Right.up * _lowerThrusterState.Right * ThrusterForce, LowerThrusters.Right.position);
-            _rigidbody.AddForceAtPosition(LowerThrusters.Front.up * _lowerThrusterState.Front * ThrusterForce, LowerThrusters.Front.position);
-            _rigidbody.AddForceAtPosition(LowerThrusters.Back.up * _lowerThrusterState.Back * ThrusterForce, LowerThrusters.Back.position);
-            
-            _rigidbody.AddForceAtPosition(UpperThrusters.Left.up * _upperThrusterState.Left * ThrusterForce, UpperThrusters.Left.position);
-            _rigidbody.AddForceAtPosition(UpperThrusters.Right.up * _upperThrusterState.Right * ThrusterForce, UpperThrusters.Right.position);
-            _rigidbody.AddForceAtPosition(UpperThrusters.Front.up * _upperThrusterState.Front * ThrusterForce, UpperThrusters.Front.position);
-            _rigidbody.AddForceAtPosition(UpperThrusters.Back.up * _upperThrusterState.Back * ThrusterForce, UpperThrusters.Back.position);
+            _rigidbody.AddForceAtPosition(Thrusters.Left.up * _thrusterState.Left * ThrusterForce, Thrusters.Left.position);
+            _rigidbody.AddForceAtPosition(Thrusters.Right.up * _thrusterState.Right * ThrusterForce, Thrusters.Right.position);
+            _rigidbody.AddForceAtPosition(Thrusters.Front.up * _thrusterState.Front * ThrusterForce, Thrusters.Front.position);
+            _rigidbody.AddForceAtPosition(Thrusters.Back.up * _thrusterState.Back * ThrusterForce, Thrusters.Back.position);
         }
     }
 
