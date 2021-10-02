@@ -19,25 +19,33 @@ namespace Assembly_CSharp_Editor.Assets._Project.Scripts.Game.Rockets
         private ThrusterState _thrusterState;
         private float _engineState;
 
+        private LandingController _landingController;
+
         public float Altitude => transform.position.y;
         public float VerticalSpeed => _rigidbody.velocity.y;
+        public Rigidbody Rigidbody => _rigidbody;
+        public LandingController LandingController => _landingController;
 
         void Start()
         {
             _rigidbody = GetComponent<Rigidbody>();
+            _landingController = new LandingController();
             Fuel.Reset();
         }
 
         void Update()
         {
-            _engineState = Input.GetMouseButton(0) && Fuel.Main > 0f ? 1f : 0f;
-            _thrusterState = new ThrusterState()
+            if (!_landingController.Done)
             {
-                Left = Input.GetKey(KeyCode.A) && Fuel.Left > 0f ? 1f : 0f,
-                Right = Input.GetKey(KeyCode.D) && Fuel.Right > 0f ? 1f : 0f,
-                Front = Input.GetKey(KeyCode.W) && Fuel.Front > 0f ? 1f : 0f,
-                Back = Input.GetKey(KeyCode.S) && Fuel.Back > 0f ? 1f : 0f,
-            };
+                _engineState = Input.GetMouseButton(0) && Fuel.Main > 0f ? 1f : 0f;
+                _thrusterState = new ThrusterState()
+                {
+                    Left = Input.GetKey(KeyCode.A) && Fuel.Left > 0f ? 1f : 0f,
+                    Right = Input.GetKey(KeyCode.D) && Fuel.Right > 0f ? 1f : 0f,
+                    Front = Input.GetKey(KeyCode.W) && Fuel.Front > 0f ? 1f : 0f,
+                    Back = Input.GetKey(KeyCode.S) && Fuel.Back > 0f ? 1f : 0f,
+                };
+            }
 
             Fuel.Main -= MainEngineFuelConsumptionPerSecond * _engineState * Time.deltaTime;
             Fuel.Left -= BoosterFuelConsumptionPerSecond * _thrusterState.Left * Time.deltaTime;
@@ -56,6 +64,8 @@ namespace Assembly_CSharp_Editor.Assets._Project.Scripts.Game.Rockets
             SetParticleSystemEmission(Thrusters.RightBooster, _thrusterState.Right > 0f);
             SetParticleSystemEmission(Thrusters.FrontBooster, _thrusterState.Front > 0f);
             SetParticleSystemEmission(Thrusters.BackBooster, _thrusterState.Back > 0f);
+
+            _landingController.Update(this);
         }
 
         void SetParticleSystemEmission(ParticleSystem system, bool enabled)
@@ -76,10 +86,15 @@ namespace Assembly_CSharp_Editor.Assets._Project.Scripts.Game.Rockets
 
         void OnCollisionEnter(Collision collision)
         {
+            _landingController.RegisterCollision(this, collision);
         }
-        
+
         void OnTriggerStay(Collider collider)
         {
+            if (collider.name == "SafeZone")
+            {
+                _landingController.RegisterInSafeZone(this);
+            }
         }
     }
 
