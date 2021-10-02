@@ -50,16 +50,36 @@ namespace Assembly_CSharp_Editor.Assets._Project.Scripts.Game.Rockets
             Fuel.Right = Mathf.Clamp01(Fuel.Right);
             Fuel.Front = Mathf.Clamp01(Fuel.Front);
             Fuel.Back = Mathf.Clamp01(Fuel.Back);
+
+            SetParticleSystemEmission(Thrusters.MainBooster, _engineState > 0f);
+            SetParticleSystemEmission(Thrusters.LeftBooster, _thrusterState.Left > 0f);
+            SetParticleSystemEmission(Thrusters.RightBooster, _thrusterState.Right > 0f);
+            SetParticleSystemEmission(Thrusters.FrontBooster, _thrusterState.Front > 0f);
+            SetParticleSystemEmission(Thrusters.BackBooster, _thrusterState.Back > 0f);
+        }
+
+        void SetParticleSystemEmission(ParticleSystem system, bool enabled)
+        {
+            var emission = system.emission;
+            emission.enabled = enabled;
         }
 
         void FixedUpdate()
         {
             _rigidbody.AddForce(transform.up * _engineState * EngineForce);
 
-            _rigidbody.AddForceAtPosition(Thrusters.Left.up * _thrusterState.Left * ThrusterForce, Thrusters.Left.position);
-            _rigidbody.AddForceAtPosition(Thrusters.Right.up * _thrusterState.Right * ThrusterForce, Thrusters.Right.position);
-            _rigidbody.AddForceAtPosition(Thrusters.Front.up * _thrusterState.Front * ThrusterForce, Thrusters.Front.position);
-            _rigidbody.AddForceAtPosition(Thrusters.Back.up * _thrusterState.Back * ThrusterForce, Thrusters.Back.position);
+            _rigidbody.AddForceAtPosition(-Thrusters.Left.up * _thrusterState.Left * ThrusterForce, Thrusters.Left.position);
+            _rigidbody.AddForceAtPosition(-Thrusters.Right.up * _thrusterState.Right * ThrusterForce, Thrusters.Right.position);
+            _rigidbody.AddForceAtPosition(-Thrusters.Front.up * _thrusterState.Front * ThrusterForce, Thrusters.Front.position);
+            _rigidbody.AddForceAtPosition(-Thrusters.Back.up * _thrusterState.Back * ThrusterForce, Thrusters.Back.position);
+        }
+
+        void OnCollisionEnter(Collision collision)
+        {
+        }
+        
+        void OnTriggerStay(Collider collider)
+        {
         }
     }
 
@@ -72,6 +92,11 @@ namespace Assembly_CSharp_Editor.Assets._Project.Scripts.Game.Rockets
     public class ThrusterReferences
     {
         public Transform Left, Right, Front, Back;
+        public ParticleSystem MainBooster;
+        public ParticleSystem LeftBooster;
+        public ParticleSystem RightBooster;
+        public ParticleSystem FrontBooster;
+        public ParticleSystem BackBooster;
     }
 
     [System.Serializable]
