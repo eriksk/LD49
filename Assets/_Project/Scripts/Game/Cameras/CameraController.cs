@@ -23,7 +23,7 @@ namespace Assembly_CSharp_Editor.Assets._Project.Scripts.Game.Cameras
             _yaw += Input.GetAxis("Mouse X");
             _pitch += Input.GetAxis("Mouse Y");
 
-            _pitch = Mathf.Clamp(_pitch, -80f, 80f);
+            _pitch = Mathf.Clamp(_pitch, -80f, 89f);
 
             var rotation = Quaternion.Euler(_pitch, _yaw, 0f);
 
