@@ -18,6 +18,8 @@ namespace Assembly_CSharp_Editor.Assets._Project.Scripts.Game.UI
         public Text FuelBackValueText;
         public Text FuelMainValueText;
 
+        public Gradient FuelColorGradient;
+
         void Update()
         {
             if (Rocket == null)
@@ -30,6 +32,12 @@ namespace Assembly_CSharp_Editor.Assets._Project.Scripts.Game.UI
                 FuelFrontValueText.text = na;
                 FuelBackValueText.text = na;
                 FuelMainValueText.text = na;
+
+                FuelLeftValueText.color = Color.black;
+                FuelRightValueText.color = Color.black;
+                FuelFrontValueText.color = Color.black;
+                FuelBackValueText.color = Color.black;
+                FuelMainValueText.color = Color.black;
                 return;
             }
 
@@ -38,14 +46,22 @@ namespace Assembly_CSharp_Editor.Assets._Project.Scripts.Game.UI
 
             AltitudeValueText.text = $"{altitude} m";
             VerticalSpeedValueText.text = $"{verticalSpeed} km/h";
+
             FuelLeftValueText.text = FormatPercent(Rocket.Fuel.Left);
             FuelRightValueText.text = FormatPercent(Rocket.Fuel.Right);
             FuelFrontValueText.text = FormatPercent(Rocket.Fuel.Front);
             FuelBackValueText.text = FormatPercent(Rocket.Fuel.Back);
             FuelMainValueText.text = FormatPercent(Rocket.Fuel.Main);
+
+            FuelLeftValueText.color = GetFuelColor(Rocket.Fuel.Left);
+            FuelRightValueText.color = GetFuelColor(Rocket.Fuel.Right);
+            FuelFrontValueText.color = GetFuelColor(Rocket.Fuel.Front);
+            FuelBackValueText.color = GetFuelColor(Rocket.Fuel.Back);
+            FuelMainValueText.color = GetFuelColor(Rocket.Fuel.Main);
         }
 
         private int MpsToKmph(float mps) => (int)Mathf.Abs(mps * 3.6f);
         private string FormatPercent(float value) => $"{(int)(value * 100f)}%";
+        private Color GetFuelColor(float value) => FuelColorGradient.Evaluate(1f - value);
     }
 }
